@@ -40,26 +40,20 @@
         margin-right: auto;
         padding-bottom: 0.5rem;
     }
-    
-    .Liberty .content-wrapper .liberty-content .liberty-content-header {
-        display: flex;
-        flex-direction: column-reverse;
-    }
 
     .Liberty .content-wrapper .liberty-content .liberty-content-header .liberty-notice {
         margin: 0.5rem;
     }
 
     .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools {
+        float: none;
         text-align: right;
+        border-bottom: 1px solid #e1e8ed;
         padding: 0.5rem;
-        border-top: 1px solid #e1e8ed;
-        float: unset;
     }
 
     .Liberty .content-wrapper .liberty-content .liberty-content-header .title {
         padding: 0.5rem;
-        min-height: 48px;
     }
 
     .Liberty .content-wrapper .liberty-content .liberty-content-header .contentSub {
