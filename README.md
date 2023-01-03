@@ -1,4 +1,3 @@
-[![imitated seed 2 용]
 리버티 스킨을 imitated-seed-2 용으로 개조한 스킨입니다.
 
 ## 개요
