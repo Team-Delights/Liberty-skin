@@ -86,9 +86,8 @@ s:hover, strike:hover, del:hover{
 
 .wiki-article div.wiki-category {
     border: 1px solid #e1e8ed;
-    padding: 0.4rem;
-    padding-left: 1rem;
-    box-shadow: 0.15rem 0.15rem 0 0 #cfdae2;
+    padding: 0.2rem;
+    padding-left: 0.6rem;
     border-radius: 0.35rem;
     display: inline-block;
     width: 100%;
@@ -213,4 +212,11 @@ div.scroll-buttons {
 
 .res-loading[data-visible="true"] .res {
     animation: loading-res-animation 1s infinite;
+}
+div.notification{
+  border: solid 1px #000000;
+  background: #bbffba;
+  border-radius: 3px;
+  padding: 6px;
+  margin-bottom:5px;
 }

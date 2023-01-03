@@ -134,7 +134,7 @@ hr {
 
 
 html input[type=button]:hover, html input[type=submit]:hover, button:hover, #mw-editform-cancel:hover {
-    background-color: #449d44;
+    background-color: #996633;
 }
 
 label {
@@ -199,7 +199,7 @@ del, s, strike {
 }
 
 .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover, .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus {
-    background-color: #71a5f4;
+    background-color: #5997f3;
     transition: 0.3s;
 }
 
@@ -448,7 +448,7 @@ del, s, strike {
 
 /* 컨텐츠 수정 */
 .Liberty .content-wrapper {
-    margin-top: 3.33rem;
+    margin-top: 4.5rem;
 }
 
 .Liberty .content-wrapper .liberty-content {

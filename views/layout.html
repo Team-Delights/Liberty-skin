@@ -19,12 +19,13 @@
                 <div class="dropdown-menu" role="menu">
                     <a href="/NeededPages" class="dropdown-item">작성이 필요한 문서</a>
                     <a href="/OrphanedPages" class="dropdown-item">고립된 문서</a>
+                    <a href="#" class="dropdown-item">분류가 되지 않은 문서</a>
                     <a href="/OldPages" class="dropdown-item">편집된 지 오래된 문서</a>
                     <a href="/ShortestPages" class="dropdown-item">내용이 짧은 문서</a>
                     <a href="/LongestPages" class="dropdown-item">내용이 긴 문서</a>
                     <a href="/BlockHistory" class="dropdown-item">차단 내역</a>
                     <a href="/RandomPage" class="dropdown-item">RandomPage</a>
-                    <a href="/Upload" class="dropdown-item">업로드</a>
+                    <a href="/Upload" class="dropdown-item">파일 올리기</a>
                     <a href="/License" class="dropdown-item">라이선스</a>
                     {%if perms.has('ipacl') %}
                         <a href="/admin/ipacl" class="dropdown-item">[관리] IPACL</a>
@@ -41,6 +42,8 @@
                 </div>
             </li>
         </ul>
+
+        <!--네비바 로그인 시작-->
         <div class="navbar-login">
             {% if member %}
                 <div class="dropdown login-menu">
@@ -65,6 +68,8 @@
                 </a>
             {% endif %}
         </div>
+        <!--네비바 로그인 끝-->
+
         <div id="pt-notifications" class="navbar-notification">
             <a href="#"><span class="label label-danger"></span></a>
         </div>
@@ -113,26 +118,32 @@
     <div class="container-fluid liberty-content">
         <div class="liberty-content-header">
             {% if document %}
+            <!--툴바 시작-->
                 <div class="content-tools">
                     <div class="btn-group" role="group" aria-label="content-tools">
-                        <a href="/w/{{ document|encode_doc }}" class="btn btn-secondary tools-btn">문서</a>
-                        <a href="/edit/{{ document|encode_doc }}" class="btn btn-secondary tools-btn">편집</a>
+                        <!--메인 툴바 시작-->
+                        <a href="#" class="btn btn-secondary tools-btn"><span class="fa fa-star-o"></span>#</a>
+                        <a href="/xref/{{ document|encode_doc }}" class="btn btn-secondary tools-btn">역링크</a>
                         <a href="/discuss/{{ document|encode_doc }}" class="btn btn-secondary tools-btn">토론</a>
-                        <a href="/history/{{ document|encode_doc }}" class="btn btn-secondary tools-btn">기록</a>
+                        <a href="/edit/{{ document|encode_doc }}" class="btn btn-secondary tools-btn">편집</a>
+                        <a href="/history/{{ document|encode_doc }}" class="btn btn-secondary tools-btn">역사</a>
+                        <a href="/acl/{{ document|encode_doc }}" class="btn btn-secondary tools-btn">ACL</a>
+                        <!--메인 툴바 끝-->
+                        <!--드롭다운 버튼시작-->
                         <button type="button" class="btn btn-secondary tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             <span class="caret"></span>
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right" role="menu">
-                            <a href="/xref/{{ document|encode_doc }}" class="dropdown-item">역링크</a>
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">                          
                             <a href="/delete/{{ document|encode_doc }}" class="dropdown-item">삭제</a>
                             <a href="/move/{{ document|encode_doc }}" class="dropdown-item">이동</a>
-                            <a href="/acl/{{ document|encode_doc }}" class="dropdown-item">ACL</a>
                             {% if user %}
-                                <a href="/contribution/author/{{ document.title|url_encode }}/document" class="dropdown-item">기여내역</a>
+                            <a href="/contribution/author/{{ document.title|url_encode }}/document" class="dropdown-item">기여내역</a>
                             {% endif %}
+                        <!--드롭다운 버튼끝-->
                         </div>
                     </div>
                 </div>
+                <!--툴바 끝-->
             {% endif %}
             <div class="title">
                 <h1>
