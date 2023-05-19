@@ -27,20 +27,26 @@
                     <a href="/RandomPage" class="dropdown-item">RandomPage</a>
                     <a href="/Upload" class="dropdown-item">파일 올리기</a>
                     <a href="/License" class="dropdown-item">라이선스</a>
+                    {%if perms.has('ipacl','suspend_account','grant','login_history','admin') %}
+		            <div class="dropdown-divider"></div>
+                    {% endif %}
                     {%if perms.has('ipacl') %}
-                        <a href="/admin/ipacl" class="dropdown-item">[관리] IPACL</a>
+                        <a href="/admin/ipacl" class="dropdown-item">IPACL</a>
                     {% endif %}
                     {%if perms.has('suspend_account') %}
-                        <a href="/admin/suspend_account" class="dropdown-item">[관리] 계정 차단</a>
+                        <a href="/admin/suspend_account" class="dropdown-item">계정 차단</a>
                     {% endif %}
                     {%if perms.has('grant') %}
-                        <a href="/admin/grant" class="dropdown-item">[관리] 권한 부여</a>
+                        <a href="/admin/grant" class="dropdown-item">권한</a>
                     {% endif %}
                     {%if perms.has('login_history') %}
-                        <a href="/admin/login_history" class="dropdown-item">[관리] 로그인 기록 조회</a>
+                        <a href="/admin/login_history" class="dropdown-item">로그인 기록 조회</a>
+                    {% endif %}
+                    {%if perms.has('aclgroup') %}
+                        <a href="/aclgroup" class="dropdown-item">ACL Group</a>
                     {% endif %}
                     {%if perms.has('admin') %}
-                        <a href="/admin/config" class="dropdown-item">[관리] 위키설정</a>
+                        <a href="/admin/config" class="dropdown-item">위키설정</a>
                     {% endif %}
                 </div>
             </li>
